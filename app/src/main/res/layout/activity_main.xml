@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_baseline_4g_mobiledata_24"
+            android:text=""
+            app:iconTint="@color/white"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/black"
+            app:iconGravity="end"
+            android:layoutDirection="ltr"
+            app:barrierDirection="start"
+            app:layout_anchorGravity="bottom|center|center_horizontal"
+            android:textAllCaps="false"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <org.codebase.animatedfloatingbutton.MovableFloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:icon="@drawable/ic_baseline_4g_mobiledata_24"-->
+<!--        app:iconGravity="end"-->
+<!--        android:text="text"-->
+<!--        android:id="@+id/we"/>-->
+
+</FrameLayout>
