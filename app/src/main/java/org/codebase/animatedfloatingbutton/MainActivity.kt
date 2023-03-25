@@ -1,13 +1,10 @@
 package org.codebase.animatedfloatingbutton
 
-import android.graphics.Path.Direction
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintSet
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import kotlin.math.max
@@ -57,24 +54,24 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener {
             downRawX = motionEvent.rawX
             downRawY = motionEvent.rawY
             dX = view!!.x - downRawX
-            dY = view!!.y - downRawY
+            dY = view.y - downRawY
             true // Consumed
         } else if (action == MotionEvent.ACTION_MOVE) {
             val viewWidth = view!!.width
-            val viewHeight = view!!.height
-            val viewParent = view!!.parent as View
+            val viewHeight = view.height
+            val viewParent = view.parent as View
             val parentWidth = viewParent.width
             val parentHeight = viewParent.height
             var newX = motionEvent.rawX + dX
 
             newX = max(0f, newX) // Don't allow the FAB past the left hand side of the parent
 
-            if (newX < 1.0) {
+            if (newX < 300.0) {
                 fab.iconGravity = MaterialButton.ICON_GRAVITY_START
-//                fab.layoutDirection =
-
+                fab.layoutDirection = View.LAYOUT_DIRECTION_RTL
             } else {
                 fab.iconGravity = MaterialButton.ICON_GRAVITY_END
+                fab.layoutDirection = View.LAYOUT_DIRECTION_LTR
             }
             newX = Math.min(
                 (parentWidth - viewWidth).toFloat(),
