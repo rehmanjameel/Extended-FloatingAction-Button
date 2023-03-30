@@ -33,18 +33,6 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener {
 
         fab.shrink()
 
-//        fab.setOnClickListener {
-//            if (!fab.isExtended) {
-//                fab.extend()
-//                fab.text = "Boost: Off \nPing: 99 Jitter: 15"
-//                fab.maxLines = 2
-//                fab.background = applicationContext.getDrawable(R.drawable.fab_back)
-//            } else {
-//                fab.shrink()
-//                fab.background = applicationContext.getDrawable(R.drawable.circle_fab)
-//
-//            }
-//        }
     }
 
     override fun onTouch(view: View?, motionEvent: MotionEvent): Boolean {
@@ -67,10 +55,10 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener {
             newX = max(0f, newX) // Don't allow the FAB past the left hand side of the parent
 
             if (newX < 300.0) {
-                fab.iconGravity = MaterialButton.ICON_GRAVITY_START
+//                fab.iconGravity = MaterialButton.ICON_GRAVITY_START
                 fab.layoutDirection = View.LAYOUT_DIRECTION_RTL
             } else {
-                fab.iconGravity = MaterialButton.ICON_GRAVITY_END
+//                fab.iconGravity = MaterialButton.ICON_GRAVITY_END
                 fab.layoutDirection = View.LAYOUT_DIRECTION_LTR
             }
             newX = Math.min(
